@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PdtController!{% endblock %}
+
+{% block body %}
+<section id="main">
+    <div class="container">
+        <a href="{{ path('produit_nouveau')}}" class="btn btn-light btn-lg mt-5">Nouveau produit</a>
+        <a href="{{ path('categorie_nouveau')}}" class="btn btn-outline-light btn-lg mt-5">Nouvelle catégorie</a>
+        <table class="table table-striped mt-5 bg-white">
+            <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.nom }}</td>
+                    <td>{{ produit.categorie.nom }}</td>
+                    <td>{{ produit.prix }}</td>
+                    <td>{{ produit.description}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

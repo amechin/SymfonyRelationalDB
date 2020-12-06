@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Catégorie{% endblock %}
+
+{% block body %}
+    <section id="main">
+        <div class="container d-flex align-items-center justify-content-center">
+            <div class="row">
+                {{ form_start(formulaire) }}
+                <div class="errors">
+                    {{ form_errors(formulaire) }}
+                </div>
+                <div class="row">
+                    {{ form_row(formulaire.nom, { 'label': 'Nom Catégorie' }) }}
+                </div>
+                <div class="row">
+                    <div class="col-md-6 text-left p-0">
+                        <a href="{{ path('categorie_index')}}" class="btn btn-outline-dark">Retour</a>
+                    </div>
+                    <div class="col-md-6 text-right p-0">
+                        {{ form_row(formulaire.valider, { 'label': 'Valider','attr': {'class': 'btn btn-light'} }) }}
+                    </div>
+
+                </div>
+                {{ form_end(formulaire) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}

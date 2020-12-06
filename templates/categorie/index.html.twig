@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategorieController!{% endblock %}
+
+{% block body %}
+    <section id="main">
+        <div class="container">
+            <a href="{{ path('produit_index')}}" class="btn btn-light btn-lg mt-5">Retour produit</a>
+            <table class="table table-striped mt-5 bg-white">
+                <thead>
+                <tr>
+                    <th scope="col">Nom Catégorie</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for categorie in categories %}
+                    <tr>
+                        <td>{{ categorie.nom }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}
